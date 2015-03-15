@@ -1,6 +1,18 @@
+var color = $('select').css('background-color'); 
+
+
+
+
 function select () {
-	$(this).toggleClass('select spin');
+	$(this).toggleClass('select');
+	// Add Spin Effect $(this).toggleClass('select spin');
 	$(this).parent().siblings().children().removeClass('select spin');
+	color = $(this).css('background-color');
+	$('#keyhole').addClass('select spin');
+	var colorname =  this.id;
+	$('#keyhole').removeClass().addClass(colorname);
+
+	
 }
 $('.key-wrapper').click(select);
 

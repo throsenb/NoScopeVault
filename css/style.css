@@ -28,20 +28,30 @@ body{background:#000;}
 #pink:hover > i {color:#ed075d;}
 #pink > i {color:#ed075d;}
 
+.pink{background-color:#ed075d !important; }
+
+
 #yellow:hover{border:#e6e83c solid 1px;}
 #yellow.select{background-color:#e6e83c; }
 #yellow:hover > i {color:#e6e83c;}
 #yellow > i {color:#e6e83c;}
+
+.yellow  {background-color:#e6e83c !important;}
 
 #blue:hover{border:#0893d7 solid 1px;}
 #blue.select{background-color:#0893d7; }
 #blue:hover > i {color:#0893d7;}
 #blue > i {color:#0893d7;}
 
+.blue  {background-color:#0893d7 !important;}
+
 #green:hover{border:#0ad100 solid 1px;}
 #green.select{background-color:#0ad100; }
 #green:hover > i {color:#0ad100;}
 #green > i {color:#0ad100;}
+
+.green  {background-color:#0ad100 !important;}
+
 
 /*Vault */
 #box-container{
@@ -78,7 +88,10 @@ body{background:#000;}
 	text-shadow: 0px 0px 4px rgba(255, 255, 255, 1);
 }
 #keyhole{
-	background: #000; 
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	background:#000;
 	height: 100px; 
 	width: 100px; 
 	margin-top: -50px;
@@ -87,13 +100,7 @@ body{background:#000;}
 	color:#fff;
 	border-radius: 50%;
 }
-#keyhole:hover{
-	background:#0fb5fe;
-	color:#000;
-	-webkit-box-shadow: inset 0px 0px 25px 0px rgba(255, 255, 255, 1);
-	-moz-box-shadow:    inset 0px 0px 25px 0px rgba(255, 255, 255, 1);		
-	box-shadow:         inset 0px 0px 25px 0px rgba(255, 255, 255, 1);
-}
+
 
 
 
