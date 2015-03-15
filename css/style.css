@@ -72,9 +72,6 @@ body{background:#000;}
 }
 #bottom-lock{
 	background:#111;
-/*	border-bottom:solid 1px #fff;
-	border-top:solid 1px #fff;*/
-
 }
 #treasure{
 	background:#0fb5fe;
@@ -98,10 +95,69 @@ body{background:#000;}
 	border:solid 1px #fff;
 	transition: all 1s linear;
 	color:#fff;
+	text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
 	border-radius: 50%;
 }
 
 
+
+.pulse{
+	-webkit-animation: pulseAnimation 3s infinite ease-in-out;
+	-moz-animation: pulseAnimation 3s infinite ease-in-out;
+	-o-animation: pulseAnimation 3s infinite ease-in-out;
+} 
+
+@-webkit-keyframes pulseAnimation {
+	0% { 
+		-webkit-box-shadow: inset 0px 0px 120px -12px rgba(0,0,0,0.75);
+		-moz-box-shadow: inset 0px 0px 120px -12px rgba(0,0,0,0.75);
+		box-shadow: inset 0px 0px 120px -12px rgba(0,0,0,0.75); 
+	}
+	50% { 
+		-webkit-box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0.75);
+		-moz-box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0.75);
+		box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0.75);
+	 }
+	100% { 
+		-webkit-box-shadow: inset 0px 0px 120px -12px rgba(0,0,0,0.75);
+		-moz-box-shadow: inset 0px 0px 120px -12px rgba(0,0,0,0.75);
+		box-shadow: inset 0px 0px 120px -12px rgba(0,0,0,0.75); 
+	}	 
+}
+@-moz-keyframes pulseAnimation {
+	0% { 
+		-webkit-box-shadow: inset 0px 0px 120px -12px rgba(0,0,0,0.75);
+		-moz-box-shadow: inset 0px 0px 120px -12px rgba(0,0,0,0.75);
+		box-shadow: inset 0px 0px 120px -12px rgba(0,0,0,0.75); 
+	}
+	50% { 
+		-webkit-box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0.75);
+		-moz-box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0.75);
+		box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0.75);
+	 }
+	100% { 
+		-webkit-box-shadow: inset 0px 0px 120px -12px rgba(0,0,0,0.75);
+		-moz-box-shadow: inset 0px 0px 120px -12px rgba(0,0,0,0.75);
+		box-shadow: inset 0px 0px 120px -12px rgba(0,0,0,0.75); 
+	}	 
+}
+@-o-keyframes pulseAnimation {
+	0% { 
+		-webkit-box-shadow: inset 0px 0px 120px -12px rgba(0,0,0,0.75);
+		-moz-box-shadow: inset 0px 0px 120px -12px rgba(0,0,0,0.75);
+		box-shadow: inset 0px 0px 120px -12px rgba(0,0,0,0.75); 
+	}
+	50% { 
+		-webkit-box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0.75);
+		-moz-box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0.75);
+		box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0.75);
+	 }
+	100% { 
+		-webkit-box-shadow: inset 0px 0px 120px -12px rgba(0,0,0,0.75);
+		-moz-box-shadow: inset 0px 0px 120px -12px rgba(0,0,0,0.75);
+		box-shadow: inset 0px 0px 120px -12px rgba(0,0,0,0.75); 
+	}	 
+}
 
 
 /* Animation */

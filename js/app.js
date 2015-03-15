@@ -10,7 +10,8 @@ function select () {
 	color = $(this).css('background-color');
 	$('#keyhole').addClass('select spin');
 	var colorname =  this.id;
-	$('#keyhole').removeClass().addClass(colorname);
+	$('#keyhole').removeClass().addClass(colorname).addClass('pulse');
+	$('#prizeName').append(colorname);
 
 	
 }
