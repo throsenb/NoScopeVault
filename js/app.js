@@ -12,6 +12,7 @@ function select () {
 	var colorname =  this.id;
 	$('#keyhole').removeClass().addClass(colorname).addClass('pulse');
 	$('#prizeName').append(colorname);
+	$('#treasure').removeClass().addClass(colorname);
 
 	
 }
