@@ -63,7 +63,9 @@ body{background:#000;}
 
 
 }
-.prize{opacity: 0;margin-top: 50px;}
+.prize{
+	margin-top: -50px;
+}
 #top-lock,#bottom-lock{height: 200px;border:solid 1px #fff;}
 #top-lock{
 	background:#222; 
@@ -91,6 +93,7 @@ body{background:#000;}
 	background:#000;
 	height: 100px; 
 	width: 100px; 
+	margin-bottom: 0px;
 	margin-top: -50px;
 	border:solid 1px #fff;
 	transition: all 1s linear;
@@ -99,6 +102,11 @@ body{background:#000;}
 	border-radius: 50%;
 }
 
+.keyfade{
+	    margin-top:100px !important;
+	    opacity: 0;
+	    margin-bottom: -100px !important; 
+}
 
 
 .pulse{

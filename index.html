@@ -7,9 +7,6 @@
     <title>NoScope Lock Screen</title>
 <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-
-
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -65,8 +62,12 @@
                 </h3>
                 <h5 class="text-center">
                   Unlock
-                </h5>         
+                </h5>    
             </div>
+            <div id="tooltip" class="text-center">
+              <h3>Please select a key </h3>
+            </div>
+
             <div class="prize" >
               <img src="img/raffle.png" class="center-block" />
               <h2 class="text-center" >You Won <br/>A <span id="prizeName"> </span> Raffle Ticket</h2>
@@ -74,7 +75,17 @@
           </div>        
           <div class="col-md-4"></div>
         </div>  
-        <div id="bottom-lock"></div>
+        <div id="bottom-lock">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+                <h5 class="text-center" id="reset">
+                  Play again
+                </h5>  
+
+          </div>
+          <div class="col-md-4"></div>
+
+        </div>
       </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
