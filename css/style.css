@@ -48,6 +48,7 @@ body{background:#000;}
 .select > i {color:#fff !important;}
 
 #treasure * .next, #treasure * .prev {margin-top: 80px;font-size: 20px;}
+#reset{color: #fff;}
 
 
 /*Specfic Keys*/
@@ -106,6 +107,10 @@ body{background:#000;}
 }
 #bottom-lock{
 	background:#111;
+	background:url('../img/back.png');
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: bottom;
 }
 #treasure{
 	background:#0fb5fe;
@@ -122,6 +127,8 @@ body{background:#000;}
 }
 #keyhole{
 	background:url('../img/top.png');
+	background-size: 300px;
+	background-position: 50%;
 	display: block;
 	margin-right: auto;
 	margin-left: auto;

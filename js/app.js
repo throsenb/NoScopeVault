@@ -10,7 +10,7 @@ $('#tooltip').fadeOut();
 
 
 function select () {
-	$(this).toggleClass('select');
+	$(this).addClass('select');
 	$(this).parent().siblings().children().removeClass('select spin');
 	// color = $(this).css('background-color');
 	$('#keyhole').addClass('select spin');
@@ -50,9 +50,13 @@ function unlock () {
 		$('#treasure').delay(2500).animate({
 		    height: "300px"}, 500, "easeOutBounce" );
 		$('#top-lock').delay(2500).animate({
-		    height: "50px"}, 500, "easeOutBounce" );
+		    height: "50px",
+		    backgroundPositionY: "-100px"
+			}, 500, "easeOutBounce" );
 		$('#bottom-lock').delay(2500).animate({
-		    height: "50px"}, 500, "easeOutBounce" );
+		    height: "50px",
+		    backgroundPositionY: "100px"
+			}, 500, "easeOutBounce" );
 
 
 	// Show prizes and reset button
@@ -78,9 +82,13 @@ function lock () {
 		$('#treasure').delay().animate({
 		    height: "0px"}, 500, "easeOutBounce" );
 		$('#top-lock').delay().animate({
-		    height: "200px"}, 500, "easeOutBounce" );
+		    height: "200px",
+		    backgroundPositionY: "0px"
+			}, 500, "easeOutBounce" );
 		$('#bottom-lock').delay().animate({
-		    height: "200px"}, 500, "easeOutBounce" );
+		    height: "200px",
+		    backgroundPositionY: "0px"
+			}, 500, "easeOutBounce" );
 
 	//Hide the Prize and reset button
 		$('.prize').toggle();
@@ -97,12 +105,12 @@ function isKeySelected () {
 		$('#keyhole').click(unlock);
 	}
 	else {
-		$('#tooltip').fadeIn(800);
+		$('#tooltip').fadeIn(200);
 	}
 };
 
 function hidetooltip () {
-	$('#tooltip').fadeOut(800);
+	$('#tooltip').fadeOut(200);
 }
 
 
