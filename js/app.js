@@ -1,6 +1,7 @@
 var color = $('select').css('background-color'); 
 var keyselect = false;
 var treasureOpen = false;
+var keycolor = $(this).find('.key').attr('src');
 
 $('#reset').toggle();
 $('.prize').toggle();
@@ -11,16 +12,29 @@ $('#tooltip').fadeOut();
 function select () {
 	$(this).toggleClass('select');
 	$(this).parent().siblings().children().removeClass('select spin');
-	color = $(this).css('background-color');
+	// color = $(this).css('background-color');
 	$('#keyhole').addClass('select spin');
 	var colorname =  this.id;
-	$('#keyhole').removeClass().addClass(colorname).addClass('pulse');
+	$('#keyhole').removeClass().addClass(colorname).addClass( colorname + '-pulse');
 	$('#prizeName').html(colorname);
-	$('#treasure').removeClass().addClass(colorname);
+	// $('#treasure').removeClass().addClass(colorname);
 	keyselect = true;	
 	$('#tooltip').fadeOut();
+	$('.keyhole-block').attr('src', 'img/keyhole-' + colorname + '.png');
+	$(this).find('.key').attr('src', 'img/white-key.png');
 
+	// Validate if the key is already selected
+	if (keycolor == 'img/white-key.png') {
+		console.log('Key is white')
+	};
+
+	// $(this).siblings().find('#blue').find('.key').attr('src', 'img/blue-key.png');
+	$(this).parent().siblings().find('#blue').find('.key').attr('src', 'img/blue-key.png');
+	$(this).parent().siblings().find('#pink').find('.key').attr('src', 'img/pink-key.png');
+	$(this).parent().siblings().find('#yellow').find('.key').attr('src', 'img/yellow-key.png');
+	$(this).parent().siblings().find('#green').find('.key').attr('src', 'img/green-key.png');
 }
+
 
 function unlock () {
 	// Animate the Keyhole
@@ -39,6 +53,7 @@ function unlock () {
 		    height: "50px"}, 500, "easeOutBounce" );
 		$('#bottom-lock').delay(2500).animate({
 		    height: "50px"}, 500, "easeOutBounce" );
+
 
 	// Show prizes and reset button
 		$('.prize').delay(3000).queue(function(){$(this).toggle()});
