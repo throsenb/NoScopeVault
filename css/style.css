@@ -9,8 +9,8 @@ body{background:#000;}
 .wide-33{width: 33.33%;float: left;}
 .wide-100{width: 100%;float: left;}
 .keyhole-block{
-	width: 50%; 
-	padding-top: 10px;
+	width: 100%; 
+	padding-top: 0px;
 
 }
 /*Keys Wrappers*/
@@ -35,7 +35,7 @@ body{background:#000;}
   	transition: all 1s linear;
   	margin-top: 14px;
   	font-size: 22px;
-  	margin-right: 9px;
+  	margin-left: 3px;
   	float: right;
 }
 .key-wrapper:hover{background-color: #fff;}
@@ -47,9 +47,9 @@ body{background:#000;}
 }
 .select > i {color:#fff !important;}
 
-#treasure * .next, #treasure * .prev {margin-top: 80px;font-size: 20px;}
+#treasure * .next, #treasure * .prev {margin-top: -80px;font-size: 20px;}
 #reset{color: #fff;}
-
+#tooltip{margin-top: 230px;color: #fff;}
 
 /*Specfic Keys*/
 #pink:hover{border:#ed075d solid 1px;}
@@ -93,24 +93,45 @@ body{background:#000;}
 
 }
 .prize{
-	margin-top: -150px;
+	margin-top: 0px;
 }
 .prizes{float: left;}
-#top-lock,#bottom-lock{height: 200px;border:solid 1px #fff;}
+#top-lock,#bottom-lock{
+	height: 200px;
+	border:solid 1px #fff;
+	-webkit-transition-duration: .5s; /* Safari */
+    transition-duration: .5s;
+    -webkit-animation-timing-function: ease-out; /* Chrome, Safari, Opera */
+    animation-timing-function: ease-out;
+
+}
 #top-lock{
 	background:#222; 
-	background:url('../img/top.png');
+	/*background:url('../img/top.png') bottom center !important;*/
 	background-size: 100%;
+	background-position: top center;
 	background-repeat: no-repeat;
-/*	border-top:solid 1px #fff;
-	border-bottom:solid 1px #fff;*/
+	border-top:solid 1px #fff;
+	background:url('../img/top.png') ;
+	border-bottom:solid 1px #fff;
+	background-size: 100%;
+
 }
+.openTop{
+	 background-position: 0px -100px !important; 
+}
+.openBottom{
+	 background-position: 0px 100px !important; 
+}
+
 #bottom-lock{
 	background:#111;
-	background:url('../img/back.png');
+	background:url('../img/back.png') ; 
+	background-position: bottom center;
+
+	/*background:url('../img/back.png')top center !important;*/
 	background-size: 100%;
 	background-repeat: no-repeat;
-	background-position: bottom;
 }
 #treasure{
 	background:#0fb5fe;
@@ -133,10 +154,10 @@ body{background:#000;}
 	margin-right: auto;
 	margin-left: auto;
 	/*background:#000;*/
-	height: 100px; 
-	width: 100px; 
-	margin-bottom: 0px;
-	margin-top: -50px;
+	height: 200px; 
+	width: 200px; 
+	margin-bottom: -200px;
+	margin-top: -100px;
 	border:solid 1px #fff;
 	transition: all 1s linear;
 	color:#fff;
@@ -388,23 +409,42 @@ body{background:#000;}
 
 /* Animation */
 .spin {
-	-webkit-animation: spinAnimation 1s 1 ease-in-out;
-	-moz-animation: spinAnimation 1s 1 ease-in-out;
-	-o-animation: spinAnimation 1s 1 ease-in-out;
+	-webkit-animation: spinAnimation 8s 1 ;
+	-moz-animation: spinAnimation 8s 1 ;
+	-o-animation: spinAnimation 8s 1 ;
 }
 
 @-webkit-keyframes spinAnimation {
-	from { -webkit-transform: rotate(4deg)  translate(0px); }
-	to { -webkit-transform: rotate(360deg)  translate(0px); }
+	0%  { -webkit-transform: rotate(0deg);}
+	20% { -webkit-transform: rotate(860deg);}
+	40% { -webkit-transform: rotate(860deg);}
+	50% { -webkit-transform: rotate(-450deg);}
+	70% { -webkit-transform: rotate(-450deg);}
+	80% { -webkit-transform: rotate(0deg);}
+	100% { -webkit-transform: rotate(0deg);}
+
 }
 @-moz-keyframes spinAnimation {
-	from { -moz-transform: rotate(4deg)  translate(0px); }
-	to { -moz-transform: rotate(360deg)  translate(0px); }
+	0%  { -moz-transform: rotate(0deg);}
+	20% { -moz-transform: rotate(860deg);}
+	40% { -moz-transform: rotate(860deg);}
+	50% { -moz-transform: rotate(-450deg);}
+	70% { -moz-transform: rotate(-450deg);}
+	80% { -moz-transform: rotate(0deg);}
+	100% { -moz-transform: rotate(0deg);}
+
 }
 @-o-keyframes spinAnimation {
-	from { -o-transform: rotate(4deg)  translate(0px); }
-	to { -o-transform: rotate(360deg)  translate(0px); }
+	0%  { -o-transform: rotate(0deg);}
+	20% { -o-transform: rotate(860deg);}
+	40% { -o-transform: rotate(860deg);}
+	50% { -o-transform: rotate(-450deg);}
+	70% { -o-transform: rotate(-450deg);}
+	80% { -o-transform: rotate(0deg);}
+	100% { -o-transform: rotate(0deg);}
+
 }
+
 
 
 
@@ -425,5 +465,6 @@ body{background:#000;}
 	.key-wrapper * h5{
 	  font-size: 15px;
 	  margin-top: 2px;
+	  margin-left: -2px;
 	}
 }

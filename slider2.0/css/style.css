@@ -43,6 +43,7 @@ h2 {
 .container {
   /*width: 960px;*/
   margin: auto;
+  padding: 0px !important;
 }
 
 .actions {
@@ -50,12 +51,12 @@ h2 {
 }
 
 .track {
-  width: 100%;
   position: relative;
-    background: #0fb5fe;
+	/*background: #0fb5fe;
   -webkit-box-shadow: inset 0px 0px 25px 0px rgba(255, 255, 255, 1);
   -moz-box-shadow: inset 0px 0px 25px 0px rgba(255, 255, 255, 1);
   box-shadow: inset 0px 0px 25px 0px rgba(255, 255, 255, 1);
+  width: 100%;*/
 }
 
 .view-port, .track .inner {
@@ -81,6 +82,7 @@ h2 {
   margin: auto;
   margin-bottom: -30px;
   padding: 10px;
+     top: -100px;
   border-radius: 4px;
 }
 
@@ -90,10 +92,14 @@ h2 {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
   text-transform: uppercase;
   color: #999;
+
 }
 
 .track .inner h2:hover {
   color: #6A3;
+}
+.inner{
+  /*overflow: hidden;*/
 }
 
 .pagination * i {font-size: 60px; color: #fff;}
@@ -116,7 +122,7 @@ h2 {
 }
 
 .track a.prev {
-  left: 0;
+  left: 5px;
   background-position: 0 0;
 }
 
@@ -129,7 +135,7 @@ h2 {
 }
 
 .track a.next {
-  right: 0;
+  right: -5px;
   background-position: -64px 0;
 }
 
@@ -168,7 +174,7 @@ h2 {
 }
 
 .slider-container .item img {
-  width: 200px;
+  width: 250px;
 }
 
 .slider-container.big .item,

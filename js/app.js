@@ -3,6 +3,7 @@ var keyselect = false;
 var treasureOpen = false;
 var keycolor = $(this).find('.key').attr('src');
 
+
 $('#reset').toggle();
 $('.prize').toggle();
 $('#tooltip').fadeOut();
@@ -39,32 +40,40 @@ function select () {
 function unlock () {
 	// Animate the Keyhole
 		$('#keyhole').addClass( "spin");
-		$('#keyhole').delay(1000).animate({
+		$('#keyhole').delay(8000).animate({
 		    marginTop: "100px",
 		    opacity: "0",
-		    marginBottom: '-100px'
+		    marginBottom: '-200px'
 		  }, 100 );
 
 	// Open the Tresure
 		treasureOpen = true;
-		$('#treasure').delay(2500).animate({
+		$('#treasure').delay(10000).animate({
 		    height: "300px"}, 500, "easeOutBounce" );
-		$('#top-lock').delay(2500).animate({
+
+		$('#top-lock').delay(10000).animate({
 		    height: "50px",
-		    backgroundPositionY: "-100px"
-			}, 500, "easeOutBounce" );
-		$('#bottom-lock').delay(2500).animate({
+		    backgroundPositionY: " -100px"
+			}, 0, "easeOutBounce" );
+
+		$('#bottom-lock').delay(10000).animate({
 		    height: "50px",
-		    backgroundPositionY: "100px"
-			}, 500, "easeOutBounce" );
+		    backgroundPositionY: " 100px"
+			}, 0, "easeOutBounce" );
+
+
+
+		   	setTimeout(function(){
+					$('#top-lock').addClass('openTop');
+					$('#bottom-lock').addClass('openBottom');
+				}, 10000, "easeOutBounce" );
 
 
 	// Show prizes and reset button
-		$('.prize').delay(3000).queue(function(){$(this).toggle()});
-		$('#reset').delay(4000).queue(function(){$(this).toggle()});
+		$('.prize').delay(10000).queue(function(){$(this).toggle()});
+		$('#reset').delay(10000).queue(function(){$(this).toggle()});
 
-	//Reset key selection: 	
-		$('.key-wrapper').removeClass('select');
+
 
 }
 
@@ -72,9 +81,9 @@ function lock () {
 	// Return keyhole
 		$('#keyhole').removeClass();
 		$('#keyhole').delay(1000).animate({
-		    marginTop: "-50px",
+		    marginTop: "-100px",
 		    opacity: "1",
-		    marginBottom: '0px'
+		    marginBottom: '-200px'
 		  }, 100 );
 
 	// Close Treasure
@@ -84,17 +93,32 @@ function lock () {
 		$('#top-lock').delay().animate({
 		    height: "200px",
 		    backgroundPositionY: "0px"
-			}, 500, "easeOutBounce" );
+			}, 0, "easeOutBounce" );
 		$('#bottom-lock').delay().animate({
 		    height: "200px",
 		    backgroundPositionY: "0px"
-			}, 500, "easeOutBounce" );
+			}, 0, "easeOutBounce" );
+
+
+
 
 	//Hide the Prize and reset button
 		$('.prize').toggle();
 		$('#reset').toggle();
-
 		keyselect = false;
+	
+	//Reset key selection: 	
+		$('.key-wrapper').removeClass('select');
+
+	//Reset key color back
+	$('#blue').find('.key').attr('src', 'img/blue-key.png');
+	$('#pink').find('.key').attr('src', 'img/pink-key.png');
+	$('#yellow').find('.key').attr('src', 'img/yellow-key.png');
+	$('#green').find('.key').attr('src', 'img/green-key.png');
+
+	// Reset keyhole color
+	$('.keyhole-block').attr('src', 'img/icons/lock.png');
+		
 }
 
 
