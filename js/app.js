@@ -12,16 +12,18 @@ $('#tooltip').fadeOut();
 
 function select () {
 	$(this).addClass('select');
-	$(this).parent().siblings().children().removeClass('select spin');
+	$(this).parent().siblings().children().removeClass('select ');
 	// color = $(this).css('background-color');
-	$('#keyhole').addClass('select spin');
+	$('#keyhole-wrapper').addClass('select spin');
 	var colorname =  this.id;
-	$('#keyhole').removeClass().addClass(colorname).addClass( colorname + '-pulse');
+	$('#keyhole-wrapper').removeClass().addClass( colorname + '-pulse');
+	$('#keyhole').removeClass().addClass('center-block').addClass(colorname + '-border');
+
 	$('#prizeName').html(colorname);
 	// $('#treasure').removeClass().addClass(colorname);
 	keyselect = true;	
 	$('#tooltip').fadeOut();
-	$('.keyhole-block').attr('src', 'img/keyhole-' + colorname + '.png');
+	$('.keyhole-block').attr('src', 'img/old_keyhole/keyhole-' + colorname + '.png');
 	$(this).find('.key').attr('src', 'img/white-key.png');
 
 	// Validate if the key is already selected
@@ -39,24 +41,35 @@ function select () {
 
 function unlock () {
 	// Animate the Keyhole
-		$('#keyhole').addClass( "spin");
-		$('#keyhole').delay(8000).animate({
+		$('#keyhole-wrapper').addClass( "spin");
+	   	setTimeout(function(){
+			$('#keyhole').addClass('spin-full');
+		}, 8000 );
+
+		$('#keyhole-wrapper').delay(10000).animate({
 		    marginTop: "100px",
 		    opacity: "0",
 		    marginBottom: '-200px'
-		  }, 100 );
+		  }, 300 );
+
+
+		$('#keyhole').delay(10000).animate({
+		    marginTop: "100px",
+		    opacity: "0",
+		    marginBottom: '-200px'
+		  }, 200 );
 
 	// Open the Tresure
 		treasureOpen = true;
-		$('#treasure').delay(10000).animate({
+		$('#treasure').delay(12000).animate({
 		    height: "300px"}, 500, "easeOutBounce" );
 
-		$('#top-lock').delay(10000).animate({
+		$('#top-lock').delay(12000).animate({
 		    height: "50px",
 		    backgroundPositionY: " -100px"
 			}, 0, "easeOutBounce" );
 
-		$('#bottom-lock').delay(10000).animate({
+		$('#bottom-lock').delay(12000).animate({
 		    height: "50px",
 		    backgroundPositionY: " 100px"
 			}, 0, "easeOutBounce" );
@@ -66,12 +79,12 @@ function unlock () {
 		   	setTimeout(function(){
 					$('#top-lock').addClass('openTop');
 					$('#bottom-lock').addClass('openBottom');
-				}, 10000, "easeOutBounce" );
+				}, 12000, "easeOutBounce" );
 
 
 	// Show prizes and reset button
-		$('.prize').delay(10000).queue(function(){$(this).toggle()});
-		$('#reset').delay(10000).queue(function(){$(this).toggle()});
+		$('.prize').delay(12000).queue(function(){$(this).toggle()});
+		$('#reset').delay(12000).queue(function(){$(this).toggle()});
 
 
 
@@ -126,21 +139,22 @@ function lock () {
 
 function isKeySelected () {
 	if(keyselect == true) {
+		$('#keyhole-wrapper').click(unlock);
 		$('#keyhole').click(unlock);
 	}
 	else {
-		$('#tooltip').fadeIn(200);
+		$('#tooltip').fadeIn(0);
 	}
 };
 
 function hidetooltip () {
-	$('#tooltip').fadeOut(200);
+	$('#tooltip').fadeOut(0);
 }
 
 
 function isTreasureOpen () {
 	if(treasureOpen == true) {
-		$('.key-wrapper').click(console.log('hi'));
+		$('.key-wrapper').click(console.log('Treasure is Open'));
 	}
 	if(treasureOpen == false) {
 		$('.key-wrapper').click(select);
@@ -152,7 +166,9 @@ function isTreasureOpen () {
 	}
 };
 
+$('#keyhole-wrapper').mouseenter(isKeySelected).mouseleave(hidetooltip);
 $('#keyhole').mouseenter(isKeySelected).mouseleave(hidetooltip);
+
 $('.key-wrapper').mouseenter(isTreasureOpen);
 $('#reset').click(lock);
 
