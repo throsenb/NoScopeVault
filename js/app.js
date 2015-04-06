@@ -32,7 +32,7 @@ function select () {
 		console.log('Key is white')
 	};
 
-	$("html, body").animate({ scrollTop: $(document).height() }, 3000);
+	// $("html, body").animate({ scrollTop: $(document).height() }, 3000);
 
 
 	// $(this).siblings().find('#blue').find('.key').attr('src', 'img/blue-key.png');
@@ -65,9 +65,6 @@ function unlock () {
 
 	// Open the Tresure
 		treasureOpen = true;
-		// $('#treasure').delay(12000).animate({
-		//     height: "300px"}, 500);
-
 
 		setTimeout(function(){ 
 			$('#top-lock').addClass('openTop');
@@ -89,12 +86,6 @@ function unlock () {
 
 function lock () {
 	// Return keyhole
-		// $('#keyhole').removeClass();
-		// $('#keyhole').delay(1000).animate({
-		//     marginTop: "-100px",
-		//     opacity: "1",
-		//     marginBottom: '-200px'
-		//   }, 100 );
 
 		$('#keyhole-wrapper').animate({
 		    marginTop: "-100px",
@@ -106,29 +97,16 @@ function lock () {
 		$('#keyhole').animate({
 		    marginTop: "50px",
 		    opacity: "1",
-		    marginBottom: '-200px'
+		    marginBottom: '0px'
 		  }, 500 );
 
 
 
 	// Close Treasure
 		treasureOpen = false;
-		// $('#treasure').delay().animate({
-		//     height: "0px"}, 500, "easeOutBounce" );
-		// $('#top-lock').delay().animate({
-		//     height: "200px",
-		//     backgroundPositionY: "0px"
-		// 	}, 0, "easeOutBounce" );
-		// $('#bottom-lock').delay().animate({
-		//     height: "200px",
-		//     backgroundPositionY: "0px"
-		// 	}, 0, "easeOutBounce" );
-
 		$('#top-lock').removeClass('openTop');
 		$('#bottom-lock').removeClass('openBottom');
 		$('#treasure').removeClass('openTreasure');
-
-
 
 	//Hide the Prize and reset button
 		$('.prize').toggle();

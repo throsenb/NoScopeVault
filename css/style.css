@@ -43,7 +43,7 @@ p{
 #green > .title{background: #0a7541;}
 .title * a > i{
 	color: #fff; 
-	font-size: 15px;
+	font-size: 20px;
 	/*margin-right: px;*/
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 	filter: alpha(opacity=50);
