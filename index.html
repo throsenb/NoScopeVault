@@ -31,10 +31,10 @@
     jQuery(function() {
       jQuery.responsiveHub({
         layouts: {
-          480:  "phone",
-          481:  "small-tablet",
-          731:  "tablet",
-          981:  "web"
+          320:  "phone",
+          480:  "small-tablet",
+          768:  "tablet",
+          992:  "web"
         },
         defaultLayout: "web"
       });
@@ -42,74 +42,94 @@
 	</script>
   </head>
   <body >
+
+  <div style="display:none">
+  <!-- Preload key images to prevent lag -->
+    <img src="img/old_keyhole/keyhole-pink.png">
+    <img src="img/old_keyhole/keyhole-green.png">
+    <img src="img/old_keyhole/keyhole-yellow.png">
+    <img src="img/old_keyhole/keyhole-blue.png">
+  </div>
+
+
     <div class="container" >
       <h5 class="text-center">
         Select a Key
       </h5>  
-      <div class="row" />
-        <div class="col-xs-6 col-md-3">
+      <div class="row" id="key-container" />
+        <div class="col-xs-3 col-md-3">
+          
           <div class="key-wrapper center-block " id="pink">
             <div class="title" >
-              <h3> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-info-circle"></i></a> Key Name</h3>
+              <h3>Key Name <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-info-circle pull-right"></i></a></h3>
             </div>  
             <img src="img/pink-key.png" class="center-block key"/>
             <div class="inventory">
                 <h3 class="text-center">x34</h3>
             </div>
           </div>
+        
         </div>
-        <div class="col-xs-6 col-md-3">
-          <div class="key-wrapper center-block " id="blue" >
-            <div class="title" >
-              <h3> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-info-circle"></i></a> Key Name</h3>
-            </div>  
-            <img src="img/blue-key.png" class="center-block key"/>
-            <div class="inventory">
-                <h3 class="text-center">x34</h3>
+        <div class="col-xs-3 col-md-3">
+          
+            <div class="key-wrapper center-block " id="blue" >
+              <div class="title" >
+                <h3>Key Name <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-info-circle pull-right"></i></a></h3>
+              </div>  
+              <img src="img/blue-key.png" class="center-block key"/>
+              <div class="inventory">
+                  <h3 class="text-center">x34</h3>
+              </div>
             </div>
-          </div>
+        
         </div>
-        <div class="col-xs-6 col-md-3">
-          <div class="key-wrapper center-block" id="yellow" >
-            <div class="title" >
-              <h3> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-info-circle"></i></a> Key Name</h3>
-            </div>  
-            <img src="img/yellow-key.png" class="center-block key"/>
-            <div class="inventory">
-                <h3 class="text-center">x34</h3>
+        <div class="col-xs-3 col-md-3">
+          
+            <div class="key-wrapper center-block" id="yellow" >
+              <div class="title" >
+                <h3>Key Name <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-info-circle pull-right"></i></a></h3>
+              </div>  
+              <img src="img/yellow-key.png" class="center-block key"/>
+              <div class="inventory">
+                  <h3 class="text-center">x34</h3>
+              </div>
             </div>
-          </div>
+        
         </div>
-        <div class="col-xs-6 col-md-3">
-          <div class="key-wrapper center-block" id="green" >
-            <div class="title" >
-              <h3> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-info-circle"></i></a> Key Name</h3>
-            </div>  
-            <img src="img/green-key.png" class="center-block key"/>
-            <div class="inventory">
-                <h3 class="text-center">x34</h3>
+        <div class="col-xs-3 col-md-3">
+          
+            <div class="key-wrapper center-block" id="green" >
+              <div class="title" >
+                <h3>Key Name <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-info-circle pull-right"></i></a></h3>
+              </div>  
+              <img src="img/green-key.png" class="center-block key"/>
+              <div class="inventory">
+                  <h3 class="text-center">x34</h3>
+              </div>
             </div>
-          </div>
+        
         </div>
       </div>
       <div class="row" id="box-container">
-        <div id="top-lock"></div>
-        <div id="treasure">
-  			<div class="col-md-4"></div>
-  			<div class="col-md-4">
-          <div id="keyhole-wrapper">     
-          </div>  
-            <div id="keyhole" class="center-block">  
-              <img src="img/old_keyhole/keyhole.png" class="center-block  keyhole-block">
-            </div>
-  				<div id="tooltip" class="text-center">
-  				  <h3>Please select a key </h3>
-  				</div>
-        </div>
-			<div class="col-md-4"></div>
+          <div id="top-lock"></div>
+          <div id="treasure">
+    			    <div class="col-md-4"></div>
+              <div class="col-md-4">
+                <div id="keyhole-wrapper">     
+                </div>  
+                <div id="keyhole" class="center-block">  
+                  <img src="img/old_keyhole/keyhole.png" class="center-block  keyhole-block">
+                </div>
+              	<div id="tooltip" class="text-center">
+              	  <h3>Please select a key </h3>
+                  <a name="keyhole"></a>
+              	</div>
+              </div>
+			      <div class="col-md-4"></div>
           <div id="prize_id" class="prize" >
 				   <div class="track example-1">
 						<div class="inner">
+              <h3 class="text-center">You won:</h3>
 						  <div class="view-port">
   							<div class="slider-container">
   							  <div class="item">
@@ -146,7 +166,7 @@
 						</div>
 					  </div>
               </div> 
-        </div>  
+            </div>  
         <div id="bottom-lock">
           <div class="col-md-4"></div>
           <div class="col-md-4">

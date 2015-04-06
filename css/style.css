@@ -33,9 +33,8 @@ p{
           transform: rotate(-45deg);  /* Firefox 16+, IE 10+, Opera */
 }
 .key-wrapper > .title{
-	height: 30px; 
 	width: 100%;
-	margin-top: -20px;
+	padding:5px 5px;
 	border-bottom: solid 1px #fff;
 }
 #pink > .title{background: #ad0067;}
@@ -45,7 +44,7 @@ p{
 .title * a > i{
 	color: #fff; 
 	font-size: 15px;
-	margin-left: 5px;
+	/*margin-right: px;*/
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 	filter: alpha(opacity=50);
 	-moz-opacity: 0.5;
@@ -56,20 +55,23 @@ p{
 }
 .title * a > i:hover{ opacity: 1}
 .key-wrapper > .inventory{
-	height: 30px; 
 	width: 100%;
-	background:#333;
-	
+	padding: 5px 0px;
+	border-top: solid 1px #fff;	
+	-webkit-transition: all 1s linear;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+    transition: all 1s linear; 
 }
 
 .key-wrapper * h3 {
+	margin: 0px !important;
 	color: #fff;
   	transition: all 1s linear;
   	font-size: 22px;
 
 }
 .key-wrapper:hover{background-color: #fff;}
-.key-wrapper:hover h5{color: #000;}
+.key-wrapper:hover .inventory > h3 {color: #000;}
+.key-wrapper:hover .inventory {border-color:  #000;}
 .key-wrapper > i {
 	color: #fff;
 	font-size: 40px;
@@ -115,7 +117,7 @@ p{
 /*Vault */
 #box-container{
 	height: 400px;
-	margin-top: 50px;
+	margin-top: 5px;
 	-webkit-box-shadow:  0px 0px 50px 0px #0fb5fe;
 	-moz-box-shadow:     0px 0px 50px 0px #0fb5fe;		
 	box-shadow:          0px 0px 50px 0px #0fb5fe;
@@ -129,10 +131,6 @@ p{
 #top-lock,#bottom-lock{
 	height: 200px;
 	border:solid 1px #fff;
-	-webkit-transition-duration: .5s; /* Safari */
-    transition-duration: .5s;
-    -webkit-animation-timing-function: ease-out; /* Chrome, Safari, Opera */
-    animation-timing-function: ease-out;
 
 }
 #top-lock{
@@ -142,16 +140,24 @@ p{
 	background-position: top center;
 	background-repeat: no-repeat;
 	border-top:solid 1px #fff;
-	background:url('../img/top.png') ;
+	background:url('../img/top.png') no-repeat;
 	border-bottom:solid 1px #fff;
 	background-size: 100%;
 
 }
+.openTop, .openBottom, #treasure{
+	-webkit-transition-duration: .5s; 
+    transition-duration: .5s;
+    -webkit-animation-timing-function: cubic-bezier(1,1.86,.84,-0.29) ;
+    -animation-timing-function: cubic-bezier(1,1.86,.84,-0.29) ;
+}
 .openTop{
-	 background-position: 0px -100px !important; 
+	 background-position: 0px -100px !important;
+	 height: 50px !important; 
 }
 .openBottom{
-	 background-position: 0px 100px !important; 
+	 background-position: 0px 100px !important;
+	 height: 50px !important; 
 }
 
 #bottom-lock{
@@ -168,6 +174,7 @@ p{
 	-moz-box-shadow:    inset 0px 0px 25px 0px rgba(255, 255, 255, 1);		
 	box-shadow:         inset 0px 0px 25px 0px rgba(255, 255, 255, 1);
 }
+.openTreasure{height: 300px !important;}
 
 .prize > h2{
 	text-shadow: 0px 0px 4px rgba(255, 255, 255, 1);
@@ -579,18 +586,14 @@ p{
 /*Responsive*/
 
 @media(max-width:767px){
-/*	.key-wrapper{
-		width: 60px;
-		height: 60px;
-	}
-	.key-wrapper * img {
-		width: 20px;
-		margin-left: 10px;
-		margin-top: -15px;
-	}
-	.key-wrapper * h5{
-	  font-size: 15px;
-	  margin-top: 2px;
-	  margin-left: -2px;
-	}*/
+	#key-container > .col-xs-3{padding: 0px;}
+	#key-container{padding: 0px 15px;}
+	.key-wrapper * h3{font-size: 16px;}
+
+}
+
+@media(max-width:480px){
+	.key-wrapper * h3{font-size: 15px;}
+	#key-container > .col-xs-3{width: 50%;}
+
 }

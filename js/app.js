@@ -10,6 +10,7 @@ $('#tooltip').fadeOut();
 
 
 
+
 function select () {
 	$(this).addClass('select');
 	$(this).parent().siblings().children().removeClass('select ');
@@ -31,11 +32,14 @@ function select () {
 		console.log('Key is white')
 	};
 
+	$("html, body").animate({ scrollTop: $(document).height() }, 3000);
+
+
 	// $(this).siblings().find('#blue').find('.key').attr('src', 'img/blue-key.png');
-	$(this).parent().siblings().find('#blue').find('.key').attr('src', 'img/blue-key.png');
-	$(this).parent().siblings().find('#pink').find('.key').attr('src', 'img/pink-key.png');
-	$(this).parent().siblings().find('#yellow').find('.key').attr('src', 'img/yellow-key.png');
-	$(this).parent().siblings().find('#green').find('.key').attr('src', 'img/green-key.png');
+	$(this).parent().siblings().find('#blue').find('.key').delay(100).attr('src', 'img/blue-key.png');
+	$(this).parent().siblings().find('#pink').find('.key').delay(100).attr('src', 'img/pink-key.png');
+	$(this).parent().siblings().find('#yellow').find('.key').delay(100).attr('src', 'img/yellow-key.png');
+	$(this).parent().siblings().find('#green').find('.key').delay(100).attr('src', 'img/green-key.png');
 }
 
 
@@ -57,33 +61,26 @@ function unlock () {
 		    marginTop: "100px",
 		    opacity: "0",
 		    marginBottom: '-200px'
-		  }, 200 );
+		  }, 300 );
 
 	// Open the Tresure
 		treasureOpen = true;
-		$('#treasure').delay(12000).animate({
-		    height: "300px"}, 500, "easeOutBounce" );
-
-		$('#top-lock').delay(12000).animate({
-		    height: "50px",
-		    backgroundPositionY: " -100px"
-			}, 0, "easeOutBounce" );
-
-		$('#bottom-lock').delay(12000).animate({
-		    height: "50px",
-		    backgroundPositionY: " 100px"
-			}, 0, "easeOutBounce" );
+		// $('#treasure').delay(12000).animate({
+		//     height: "300px"}, 500);
 
 
+		setTimeout(function(){ 
+			$('#top-lock').addClass('openTop');
+			$('#bottom-lock').addClass('openBottom');
+			$('#treasure').addClass('openTreasure');
+		}, 12000);
 
-		   	setTimeout(function(){
-					$('#top-lock').addClass('openTop');
-					$('#bottom-lock').addClass('openBottom');
-				}, 12000, "easeOutBounce" );
+
+		
 
 
 	// Show prizes and reset button
-		$('.prize').delay(12000).queue(function(){$(this).toggle()});
+		$('.prize').delay(12500).queue(function(){$(this).toggle()});
 		$('#reset').delay(12000).queue(function(){$(this).toggle()});
 
 
@@ -92,26 +89,44 @@ function unlock () {
 
 function lock () {
 	// Return keyhole
-		$('#keyhole').removeClass();
-		$('#keyhole').delay(1000).animate({
+		// $('#keyhole').removeClass();
+		// $('#keyhole').delay(1000).animate({
+		//     marginTop: "-100px",
+		//     opacity: "1",
+		//     marginBottom: '-200px'
+		//   }, 100 );
+
+		$('#keyhole-wrapper').animate({
 		    marginTop: "-100px",
 		    opacity: "1",
 		    marginBottom: '-200px'
-		  }, 100 );
+		  }, 500 );
+
+
+		$('#keyhole').animate({
+		    marginTop: "50px",
+		    opacity: "1",
+		    marginBottom: '-200px'
+		  }, 500 );
+
+
 
 	// Close Treasure
 		treasureOpen = false;
-		$('#treasure').delay().animate({
-		    height: "0px"}, 500, "easeOutBounce" );
-		$('#top-lock').delay().animate({
-		    height: "200px",
-		    backgroundPositionY: "0px"
-			}, 0, "easeOutBounce" );
-		$('#bottom-lock').delay().animate({
-		    height: "200px",
-		    backgroundPositionY: "0px"
-			}, 0, "easeOutBounce" );
+		// $('#treasure').delay().animate({
+		//     height: "0px"}, 500, "easeOutBounce" );
+		// $('#top-lock').delay().animate({
+		//     height: "200px",
+		//     backgroundPositionY: "0px"
+		// 	}, 0, "easeOutBounce" );
+		// $('#bottom-lock').delay().animate({
+		//     height: "200px",
+		//     backgroundPositionY: "0px"
+		// 	}, 0, "easeOutBounce" );
 
+		$('#top-lock').removeClass('openTop');
+		$('#bottom-lock').removeClass('openBottom');
+		$('#treasure').removeClass('openTreasure');
 
 
 
@@ -124,13 +139,13 @@ function lock () {
 		$('.key-wrapper').removeClass('select');
 
 	//Reset key color back
-	$('#blue').find('.key').attr('src', 'img/blue-key.png');
-	$('#pink').find('.key').attr('src', 'img/pink-key.png');
-	$('#yellow').find('.key').attr('src', 'img/yellow-key.png');
-	$('#green').find('.key').attr('src', 'img/green-key.png');
+		$('#blue').find('.key').attr('src', 'img/blue-key.png');
+		$('#pink').find('.key').attr('src', 'img/pink-key.png');
+		$('#yellow').find('.key').attr('src', 'img/yellow-key.png');
+		$('#green').find('.key').attr('src', 'img/green-key.png');
 
 	// Reset keyhole color
-	$('.keyhole-block').attr('src', 'img/icons/lock.png');
+		$('.keyhole-block').attr('src', 'img/old_keyhole/keyhole.png');
 		
 }
 
